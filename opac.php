@@ -29,7 +29,6 @@ if (isset($_GET['subjek'])) {
 ?>
 <!DOCTYPE html>
 <html lang="id">
-<html>
 
 <head>
     <meta charset="UTF-8">
@@ -41,16 +40,18 @@ if (isset($_GET['subjek'])) {
 <body>
     <BR>
     <BR>
-    <center>
-        <h2 class="h2-opac">OPAC UIN Sunan Kalijaga</h2>
-        <fieldset style="width:50%; border:0px solid black">
-            <form method="GET" action="">
-                <input type="text" name="subjek" placeholder="Cari berdasarkan subjek koleksi..."
-                    style="width:90%; padding:10px"
-                    value="<?= htmlspecialchars($keyword) ?>">
+    <div id="hero-placeholder" aria-hidden="false">
+        <div id="hero-overlay">
+            <form class="hero-search-form" method="GET" action="">
+                <div class="hero-search">
+                    <input type="text" name="subjek" placeholder="Cari berdasarkan subjek koleksi..."
+                        value="<?= htmlspecialchars($keyword) ?>">
+                    <button type="submit" title="Cari">🔍</button>
+                </div>
             </form>
-        </fieldset>
-    </center>
+        </div>
+        <div class="hero-caption">Koleksi Perpustakaan UIN Sunan Kalijaga Yogyakarta</div>
+    </div>
     <br>
 
     <?php

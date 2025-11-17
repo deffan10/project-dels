@@ -221,3 +221,34 @@ footer {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
+/* Background texture and hero styles for OPAC page */
+body{
+  /* keep existing background-color as fallback */
+  background-image: url('background_linen.png');
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+#hero-placeholder{
+  max-width:1100px;
+  height:420px;
+  margin:38px auto;
+  position:relative;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.45);
+  background-color:#444;
+  background-image: url('div.jpg');
+  background-size:cover;
+  background-position:center center;
+}
+
+/* overlay centers the search box */
+#hero-overlay{position:absolute;inset:0;display:flex;align-items:flex-start;justify-content:center;padding-top:60px}
+.hero-search-form{width:84%;max-width:920px}
+.hero-search{display:flex;align-items:center}
+.hero-search input[type="text"]{flex:1;padding:18px 20px;font-size:18px;border:0;border-radius:4px 0 0 4px;outline:none}
+.hero-search button{width:52px;height:52px;border:0;background:#fff;border-radius:0 4px 4px 0;cursor:pointer;font-size:18px}
+.hero-caption{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);color:#fff;text-align:center;padding:10px 12px;font-size:14px}
+@media(max-width:640px){#hero-placeholder{height:320px} .hero-search-form{width:92%} .hero-search input[type="text"]{padding:14px;font-size:16px} .hero-search button{width:46px;height:46px}}
