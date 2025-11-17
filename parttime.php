@@ -1,0 +1,181 @@
+<?php
+require 'koneksi_magang.php';
+?>
+<!DOCTYPE html>
+<html lang="id">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Perpustakaan UIN Sunan Kalijaga</title>
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+    <Center>
+        <header>
+            <div class="header-column column_1"><img src=logo-tiga.png width=175 height=auto></div>
+            <div class="header-column column_2">
+                <div class="navbar">
+                    <div class="dropdown">
+                        <button class="mainmenubtn">TENTANG KAMI</button>
+                        <div class="dropdown-child">
+                            <a href="sejarah.html"> >> SEJARAH</a>
+                            <a href="visi_misi.html"> >> VISI DAN MISI</a>
+                            <a href="#"> >> BERITA</a>
+                            <a href="struktur_organisasi.html"> >> STRUKTUR ORGANISASI</a>
+                            <a href="parttime.html"> >> MAHASISWA PARTIME </a>
+                        </div>
+                    </div>
+                    <div class="header-column column_3">LAYANAN</div>
+                    <div class="header-column column_4">KOLEKSI DIGITAL</div>
+                    <div class="header-column column_5">BEBAS PUSTAKA</div>
+                    <div class="header-column column_6">PEMUSTAKA</div>
+                    <div class="header-column column_7">DATA DAN FAKTA</div>
+                    <div class="header-column column_8">REFERENCE TOOLS</div>
+                </div>
+        </header>
+        <br>
+        <font size="5.5" face="calibri"><b>
+                <center>MAHASISWA PART TIME</center>
+            </b></font>
+        <br>
+        <center>
+            <fieldset style="width:25%; border:2px solid black">
+                <center>
+                    <form class="form-partime" method=get action="">
+                </center>
+                <center><b>Angkatan:</b></center>
+                <p>
+                    <select name="angkatan" style="width:99%" onchange="this.form.submit();">
+                        <option value="" <?php if ($angkatan == '') echo 'selected'; ?>>-- Pilih Angkatan --</option>
+                        <option value="2025" <?php if ($angkatan == '2025') echo 'selected'; ?>>2025</option>
+                        <option value="2024" <?php if ($angkatan == '2024') echo 'selected'; ?>>2024</option>
+                        <option value="2023" <?php if ($angkatan == '2023') echo 'selected'; ?>>2023</option>
+                        <option value="2022" <?php if ($angkatan == '2022') echo 'selected'; ?>>2022</option>
+                        <option value="2021" <?php if ($angkatan == '2021') echo 'selected'; ?>>2021</option>
+                    </select>
+            </fieldset>
+            </form>
+            <br>
+            <?php
+            // 2. Bagian Tampilan (View)
+            // PHP di sini hanya bertugas untuk menampilkan data.
+            // Variabel $hasil dan $angkatan sudah disiapkan oleh 'logic.php'
+            if (count($hasil) > 0) {
+                echo '<div class="grid-partime">';
+                foreach ($hasil as $mhs) {
+                    echo '<div class="card-partime">';
+                    echo '<img class="img-partime" src="' . htmlspecialchars($mhs['foto']) . '" alt="' . htmlspecialchars($mhs['nama']) . '">';
+                    echo '<h3>' . htmlspecialchars($mhs['nama']) . '</h3>';
+                    echo '<p> ' . $mhs['nim'] . '</p>';
+                    echo '<p>Angkatan ' . $mhs['angkatan'] . '</p>';
+                    echo '</div>';
+                }
+                echo '</div>';
+            } else {
+                // Memberikan pesan yang lebih jelas
+                if ($angkatan != '') {
+                    echo '<p><em>Tidak ada data mahasiswa untuk angkatan ' . htmlspecialchars($angkatan) . '.</em></p>';
+                } else {
+                    echo '<p><em>Silakan pilih angkatan untuk menampilkan data.</em></p>';
+                }
+            }
+            ?>
+</body>
+<br>
+<footer>
+    <div class="footer-column kiri">
+        <b>
+            <font size="5">WEBLINK</font>
+        </b>
+        <table border="0" style="width:100%">
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">One Search PTKI Library</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">Sinta</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">Rama Repository</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">Google Scholar</td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer-column tengah_1">
+        <b>
+            <font size="5">KERJA SAMA</font>
+        </b>
+        <table border="0" style="width:100%">
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">APPTIS</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">FKP2TN</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">FPPTI</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">Jogja Library for ALL</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">Perpustakaan KPK</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">Indonesia Onesearch</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="globe.jpeg" width="15" height="auto"></td>
+                <td style="color:white">Perpustakaan Nasional</td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer-column tengah_2">
+        <b>
+            <font size="5">KONTAK KAMI</font>
+        </b>
+        <table border="0" style="width:100%">
+            <tr>
+                <td style="width:15"><img src="home.png" width="15" height="auto"></td>
+                <td style="color:white"><b>Perpustakaan UIN Sunan Kalijaga</b><br>
+                    Jalan Marsda Adisucipto<br>
+                    Yogyakarta 55281</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="call.png" width="15" height="auto"></td>
+                <td style="color:white">0274-548635 | Fax: 0274-552231</td>
+            </tr>
+            <tr>
+                <td style="width:15"><img src="mail.png" width="15" height="auto"></td>
+                <td style="color:white">lib@uin-suka.ac.id</td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer-column kanan">
+        <b>
+            <font size="5">PETA PETUNJUK</font>
+        </b>
+        <table border="0" style="width:100%">
+            <tr>
+                <td style="width:300"><img src="peta.png" width="300" height="auto"></td>
+            </tr>
+        </table>
+    </div>
+</footer>
+</div>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Dropdown UIN Style</title>
+    <style>
+      /* ======== Reset dasar ======== */
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      /* ======== Navigasi utama ======== */
+      .navbar {
+        background-color: #00833e; /* Hijau UIN */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+      }
+
+      /* ======== Tombol utama ======== */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown .mainbtn {
+        background-color: transparent;
+        color: white;
+        padding: 16px 22px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropdown .mainbtn:hover {
+        background-color: #006a31;
+      }
+
+      /* ======== Isi dropdown ======== */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%; /* muncul tepat di bawah tombol */
+        left: 0;
+        background-color: #1468b4; /* Biru khas submenu UIN */
+        min-width: 220px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        z-index: 20;
+      }
+
+      /* ======== Link di dropdown ======== */
+      .dropdown-content a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .dropdown-content a:hover {
+        background-color: #005fa3;
+      }
+
+      /* ======== Hover aktif ======== */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* ======== Efek transisi lembut ======== */
+      .dropdown-content {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.25s ease-in-out;
+        pointer-events: none;
+      }
+
+      .dropdown:hover .dropdown-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ======== NAVBAR ======== -->
+    <div class="navbar">
+      <div class="dropdown">
+        <button class="mainbtn">TENTANG KAMI</button>
+        <div class="dropdown-content">
+          <a href="sejarah.html">SEJARAH</a>
+          <a href="visi_misi.html">VISI DAN MISI</a>
+          <a href="#">BERITA</a>
+          <a href="struktur_organisasi.html">STRUKTUR ORGANISASI</a>
+          <a href="parttime.html">MAHASISWA PARTTIME</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="mainbtn">LAYANAN</button>
+        <div class="dropdown-content">
+          <a href="#">LAYANAN SIRKULASI</a>
+          <a href="#">LAYANAN REFERENSI</a>
+          <a href="#">LAYANAN DIGITAL</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="mainbtn">KOLEKSI DIGITAL</button>
+        <div class="dropdown-content">
+          <a href="#">E-JOURNAL</a>
+          <a href="#">E-BOOK</a>
+          <a href="#">DIGITAL REPOSITORY</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

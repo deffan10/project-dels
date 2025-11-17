@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: Calibri, sans-serif;
+  background-color: white;
+  line-height: 1.6;
+}
+
+.body-2 {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.body-3 {
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+header {
+  background-color: #00a65a;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+
+/*Tiap Kolum Header*/
+.header-column {
+  white-space: nowrap;
+  flex: 1;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.column_1 {
+  color: black;
+}
+
+.column_2 {
+  color: black;
+}
+
+.column_3 {
+  color: black;
+}
+
+.column_4 {
+  color: black;
+}
+
+.column_5 {
+  color: black;
+}
+
+.column_6 {
+  color: black;
+}
+
+.column_7 {
+  color: black;
+}
+
+.column_8 {
+  color: black;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+}
+footer {
+  display: flex;
+  background-color: black;
+  color: white;
+  line-height: 1.6;
+}
+/* Tiap kolom footer */
+.footer-column {
+  flex: 2;
+  padding: 15px;
+  text-align: left;
+}
+
+.kiri {
+  background: black;
+  color: white;
+  line-height: 1.6;
+}
+
+.tengah_1 {
+  background: black;
+  color: white;
+}
+
+.tengah_2 {
+  background: black;
+  color: white;
+}
+.kanan {
+  background: black;
+  color: white;
+}
+
+.body-partime {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+}
+
+.form-partime {
+  margin-bottom: 20px;
+}
+
+.grid-partime {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.card-partime {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+.img-partime {
+  width: 270px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.h3-partime {
+  margin: 10px 0 5px 0;
+  font-size: 16px;
+}
+
+.p-partime {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.h2-opac {
+  text-align: center;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+.grid-opac {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 30px auto;
+  width: 80%; /* agar card memanjang ke kanan */
+}
+
+/* Card hasil pencarian */
+.card-opac {
+  background: #ffffff;
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: 0.2s;
+}
+
+/* Efek hover */
+.card-opac:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Judul koleksi */
+.card-opac h3 {
+  font-size: 22px;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+/* Detail koleksi */
+.card-opac p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.card-opac p strong {
+  color: #000;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.search-form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-form input[type="text"] {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
